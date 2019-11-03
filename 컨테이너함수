@@ -1,0 +1,23 @@
+출력에 print필요 x
+배열
+myList = [ ~ ]
+길이 len(myList)
+뒤에 추가 myList.append('hi')
+삭제 myList.pop(), myList.pop(indexNum)
+연장 myList.extend(['a',123,'b'])
+삽입 myList.insert(indexNum, 'new')
+삭제 myList.remove('new')
+전체 삭제 myList.clear()
+정렬 myList.sort(), myList.sort(reverse=True) -내림차순
+데이터 역순 myList.reverse()
+슬라이싱 myList[1:3] //인덱스 1부터 2까지
+
+튜플
+tuple = ( ~ )
+수정 불가 참조만 가능
+
+딕셔너리
+dic = {10:'홍길동' , 20:'123'}
+키와 밸류가 한쌍
+데이터 참조 []
+데이터 삭제 del
