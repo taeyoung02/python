@@ -1,0 +1,27 @@
+a[-1] 맨 마지막 문자 (-2,-3...)
+
+슬라이싱
+a[2:] 2부터 끝까지
+
+메서드
+type(a) 
+a.find('q') 찾으면 인덱스반환 못찾으면 -1
+a.index('q') 찾으면 인덱스반환
+a.rfind('q') 뒤에서부터 찾음
+
+ex)
+a="c:\\computer\\diary\\abc.jpg"
+a[a.rfind('\\')+1:]
+"abc.jpg"
+
+.strip() 앞뒤공백제거
+.isnumeric() 숫자면 True
+.isalpha() 문자면 True
+.split('\\') \\기준으로 자름
+a.replace("jpg","pdf") 변환
+a.count('\\') \\의 개수 반환
+len(a) 길이
+a.upper() 대문자로 변환된 문자열 반환
+a.lower()
+dir(int) dir(str) 클래스안에 어떤 함수들을 가지고있는지 나옴
+'q' in a //a안에 q가 있으면 True, 아니면 False
