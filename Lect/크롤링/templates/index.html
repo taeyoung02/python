@@ -1,0 +1,15 @@
+<form name="form" method="POST" action="/">
+    <input type="text" name="keyword" value="지역">
+    <input type="text" name="house" value="아파트/원룸/빌라/오피스텔">
+    <input type="text" name="rent" value="수용가능한 월세/전세">
+    <input type="text" name="pay" value="월세/전세">
+    <input type="submit" value="검색">
+</form>
+{% if bang|length > 0 %}
+    {% for b in bang %}
+        <li><a href='{{bang.info}}'>{{b.title}} {{b.deposit_rent}} {{b.service_sale}} {{b.size}}
+            {{b.link}}</a></li>
+    {% endfor %}
+{% else %}
+    <p>검색 결과가 없습니다.</p>
+{% endif %}
