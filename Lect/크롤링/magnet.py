@@ -71,7 +71,7 @@ def bang(keyword,house,rent,pay):
     for d in Datas:# pprint.pprint(d)
         #아파트, 빌라, 원룸, 오피스텔
         #조건설정
-        if d.get("service_type")==house and d.get("sales_type")==pay and d.get("rent")<int(rent):
+        if d.get("service_type")==house and d.get("sales_type")==pay and d.get("rent")<=int(rent):
             item_id=d.get("item_id")
             sales_type = d.get("sales_type")
             service_type = d.get("service_type")
@@ -95,6 +95,7 @@ def bang(keyword,house,rent,pay):
                     "size": "{}m^2".format(size_m2),
                     "link": 'https://www.zigbang.com/home/{}/items/{}'.format(_type, item_id)
                 })
+    print(results)
     return results
 
 
