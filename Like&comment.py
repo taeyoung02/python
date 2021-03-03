@@ -12,7 +12,8 @@ import re
 # #user-agent값을 변경하여 headless모드 감지를 방지
 # options.add_argument("user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36")
 # options.add_argument("lang=ko_KR") #headless모드에선 언어설정이 안되있으므로 한국어로 설정(감지 방지)
-driver = webdriver.Chrome('C:\\Users\\User\\Downloads\\chromedriver_win32\\chromedriver.exe')#,chrome_options=options)
+driver = webdriver.Chrome('C://Users//dhrms//Downloads//chromedriver_win32\\chromedriver.exe')#,chrome_options=options)
+
 class start(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
@@ -43,8 +44,6 @@ class start(QtWidgets.QWidget):
 
     def login(self):
         driver.get("https://www.instagram.com/accounts/login/")
-        driver.implicitly_wait(10)
-
         driver.find_element_by_name('username').send_keys(self._id.text())
         driver.find_element_by_name('password').send_keys(self._pwd.text())
         driver.implicitly_wait(10)
@@ -53,13 +52,17 @@ class start(QtWidgets.QWidget):
         self.newWindow = Main()
         self.newWindow.show()
         self.close()
-        
+
+
 class Main(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
         self.layout_m = QtWidgets.QHBoxLayout(self) #전체틀
         self.start_layout = QtWidgets.QVBoxLayout() #버튼을 담을 틀
         self.setFixedSize(300, 200)
+        
+        ''' 수정 필요 '''
+        
         self.target=QLabel("상대의 아이디를 입력하세요")
         self._target=QLineEdit()
         self.like = self.createButton("좋아요",self.clicklike)#버튼watch

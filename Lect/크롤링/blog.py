@@ -1,14 +1,16 @@
 import requests
 from bs4 import BeautifulSoup
 query="파이썬강좌"
-def get_search_naver_blog(query, start_page, end_page=None):
+def get_search_community(query, start_page, end_page=None):
     #11=(2-1)*10+1
     #21=(3-1)*10+1
     start = (start_page-1)*10+1
-    url="https://search.naver.com/search.naver?where=post&query={}&start={}".format(query,start)
+    ilbe = "https://www.ilbe.com"
+    url= ilbe + "&query={}&start={}".format(query,start)
     r=requests.get(url)
     bs=BeautifulSoup(r.text,"lxml")#파싱
     result=[]
+    keyword = input()
     if end_page is None:
         tot_counts = int(bs.select("span.title_num")[0].text.split("/")[-1].replace("건","").replace(",","").strip())
         # tot_counts=tot_counts.split("/")[-1]
